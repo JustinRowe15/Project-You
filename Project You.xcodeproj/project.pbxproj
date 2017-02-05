@@ -17,6 +17,7 @@
 		0BCE79761E46C50200ED66D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE79741E46C50200ED66D6 /* LaunchScreen.storyboard */; };
 		0BCE79811E46C50300ED66D6 /* Project_YouTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE79801E46C50300ED66D6 /* Project_YouTests.m */; };
 		0BCE798C1E46C50300ED66D6 /* Project_YouUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE798B1E46C50300ED66D6 /* Project_YouUITests.m */; };
+		0BCE799B1E46C8EA00ED66D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE799A1E46C8EA00ED66D6 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		0BCE79871E46C50300ED66D6 /* Project YouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project YouUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCE798B1E46C50300ED66D6 /* Project_YouUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project_YouUITests.m; sourceTree = "<group>"; };
 		0BCE798D1E46C50300ED66D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BCE79991E46C8EA00ED66D6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0BCE799A1E46C8EA00ED66D6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				0BCE796C1E46C50200ED66D6 /* DetailViewController.h */,
 				0BCE796D1E46C50200ED66D6 /* DetailViewController.m */,
 				0BCE796F1E46C50200ED66D6 /* Main.storyboard */,
+				0BCE79991E46C8EA00ED66D6 /* LoginViewController.h */,
+				0BCE799A1E46C8EA00ED66D6 /* LoginViewController.m */,
 				0BCE79721E46C50200ED66D6 /* Assets.xcassets */,
 				0BCE79741E46C50200ED66D6 /* LaunchScreen.storyboard */,
 				0BCE79771E46C50200ED66D6 /* Info.plist */,
@@ -283,6 +288,7 @@
 			files = (
 				0BCE796E1E46C50200ED66D6 /* DetailViewController.m in Sources */,
 				0BCE796B1E46C50200ED66D6 /* MasterViewController.m in Sources */,
+				0BCE799B1E46C8EA00ED66D6 /* LoginViewController.m in Sources */,
 				0BCE79651E46C50200ED66D6 /* AppDelegate.m in Sources */,
 				0BCE79621E46C50200ED66D6 /* main.m in Sources */,
 				0BCE79681E46C50200ED66D6 /* Project_You.xcdatamodeld in Sources */,
