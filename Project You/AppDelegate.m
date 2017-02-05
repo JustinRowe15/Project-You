@@ -27,7 +27,7 @@
 - (void)presentLoginViewController {
     // Go to the welcome screen and have them log in or create an account.
     self.loginViewController = [[LoginViewController alloc] init];
-    self.loginViewController.title = @"Welcome to AddictAid";
+    self.loginViewController.title = @"Welcome to Project You";
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
     navController.navigationBarHidden = YES;
