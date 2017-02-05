@@ -10,7 +10,7 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
-//This is for first commit.  Updating the ViewController with this comment.
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @property (strong, nonatomic) NSString *welcomeString;
 @property (strong, nonatomic) NSString *loginString;

@@ -114,15 +114,9 @@
 			children = (
 				0BCE79631E46C50200ED66D6 /* AppDelegate.h */,
 				0BCE79641E46C50200ED66D6 /* AppDelegate.m */,
-				0BCE79691E46C50200ED66D6 /* MasterViewController.h */,
-				0BCE796A1E46C50200ED66D6 /* MasterViewController.m */,
-				0BCE796C1E46C50200ED66D6 /* DetailViewController.h */,
-				0BCE796D1E46C50200ED66D6 /* DetailViewController.m */,
+				0BCE799F1E46DD7000ED66D6 /* Login | New User View Controllers */,
+				0BCE79A01E46DE4500ED66D6 /* Home | Menu View Controllers */,
 				0BCE796F1E46C50200ED66D6 /* Main.storyboard */,
-				0BCE79991E46C8EA00ED66D6 /* LoginViewController.h */,
-				0BCE799A1E46C8EA00ED66D6 /* LoginViewController.m */,
-				0BCE799C1E46D49900ED66D6 /* NewUserViewController.h */,
-				0BCE799D1E46D49900ED66D6 /* NewUserViewController.m */,
 				0BCE79721E46C50200ED66D6 /* Assets.xcassets */,
 				0BCE79741E46C50200ED66D6 /* LaunchScreen.storyboard */,
 				0BCE79771E46C50200ED66D6 /* Info.plist */,
@@ -156,6 +150,28 @@
 				0BCE798D1E46C50300ED66D6 /* Info.plist */,
 			);
 			path = "Project YouUITests";
+			sourceTree = "<group>";
+		};
+		0BCE799F1E46DD7000ED66D6 /* Login | New User View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BCE79991E46C8EA00ED66D6 /* LoginViewController.h */,
+				0BCE799A1E46C8EA00ED66D6 /* LoginViewController.m */,
+				0BCE799C1E46D49900ED66D6 /* NewUserViewController.h */,
+				0BCE799D1E46D49900ED66D6 /* NewUserViewController.m */,
+			);
+			name = "Login | New User View Controllers";
+			sourceTree = "<group>";
+		};
+		0BCE79A01E46DE4500ED66D6 /* Home | Menu View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BCE79691E46C50200ED66D6 /* MasterViewController.h */,
+				0BCE796A1E46C50200ED66D6 /* MasterViewController.m */,
+				0BCE796C1E46C50200ED66D6 /* DetailViewController.h */,
+				0BCE796D1E46C50200ED66D6 /* DetailViewController.m */,
+			);
+			name = "Home | Menu View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

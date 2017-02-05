@@ -13,37 +13,16 @@
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 @end
 
 @implementation AppDelegate
 
+@synthesize loginViewController, context;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [self presentLoginViewController];
-    return YES;
-}
-
-- (void)presentLoginViewController {
-    // Go to the welcome screen and have them log in or create an account.
-    self.loginViewController = [[LoginViewController alloc] init];
-    self.loginViewController.title = @"Welcome to Project You";
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
-    navController.navigationBarHidden = YES;
-    
-    self.viewController = navController;
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
-    {
-        self.viewController.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-    self.window.rootViewController = self.viewController;
-}
-
--(void)presentMainViewController {
-    //
-    // Presenting home after the user logs in.
-    //
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
@@ -53,6 +32,23 @@
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.persistentContainer.viewContext;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:loginViewController animated:NO completion:NULL];
+    
+    return YES;
+}
+
+- (void)presentLoginViewController {
+    
+    
+}
+
+-(void)presentMainViewController {
+    
+    
 }
 
 
@@ -131,7 +127,7 @@
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    context = self.persistentContainer.viewContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
