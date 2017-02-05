@@ -193,7 +193,7 @@
     
     if (textError) {
         errorText = [errorText stringByAppendingString:errorTextEnding];
-        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Title" message:errorText preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Error" message:errorText preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* okButton = [UIAlertAction
                                    actionWithTitle:@"Ok"
@@ -209,9 +209,22 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *usernameString = [userDefaults objectForKey:@"username"];
         NSString *passwordString = [userDefaults objectForKey:@"password"];
+        
         if (usernameString == self.usernameField.text && passwordString == self.passwordField.text) {
             [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
+        } else if (usernameString == nil && passwordString == nil) {
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Error" message:@"No User Identified.  Please sign up." preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* okButton = [UIAlertAction
+                                       actionWithTitle:@"Ok"
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {
+                                           NewUserViewController * newUserViewController = [[NewUserViewController alloc] init];
+                                           [self presentViewController:newUserViewController animated:YES completion:nil];
+                                       }];
+            
+            [alertView addAction:okButton];
+        } else if (![self.passwordField.text isEqualToString:passwordString]) {
             UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Error" message:@"Password Incorrect.  Please try again." preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* okButton = [UIAlertAction
