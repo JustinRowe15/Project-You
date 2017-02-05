@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "NewUserViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -14,9 +16,30 @@
 
 @implementation LoginViewController
 
+@synthesize welcomeString, loginString, userString, forgotString, welcomeLabel, loginLabel, userLabel, forgotLabel, loginButton, usernameField, passwordField, guestString, guestLabel;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //Set View Strings
+    welcomeString = @"Welcome To AddictAid.";
+    loginString = @"Please Log In To Your Account";
+    userString = @"New user?  Click here.";
+    guestString = @"Skip login as guest? Click here.";
+    
+}
+
+- (IBAction)newUser:(id)sender
+{
+    NewUserViewController * newUserViewController = [[NewUserViewController alloc] init];
+    [self presentViewController:newUserViewController animated:YES completion:nil];
+}
+
+- (IBAction)skipLogin:(id)sender
+{
+    [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentMainViewController];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -18,16 +19,40 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self presentLoginViewController];
+    return YES;
+}
+
+- (void)presentLoginViewController {
+    // Go to the welcome screen and have them log in or create an account.
+    self.loginViewController = [[LoginViewController alloc] init];
+    self.loginViewController.title = @"Welcome to AddictAid";
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    navController.navigationBarHidden = YES;
+    
+    self.viewController = navController;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+    {
+        self.viewController.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    self.window.rootViewController = self.viewController;
+}
+
+-(void)presentMainViewController {
+    //
+    // Presenting home after the user logs in.
+    //
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
-
+    
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.persistentContainer.viewContext;
-    return YES;
 }
 
 
